@@ -25,8 +25,15 @@
                     break;
                 case 4:
                     double[] numbersForDivision = EnterTwoNumbersFromConsole();
-                    double div = DivideTwoNumbers(numbersForDivision[0], numbersForDivision[1]);
-                    Console.WriteLine($"Result: {div}");
+                    if (numbersForDivision[1] == 0)
+                    {
+                        Console.WriteLine("Second number can not be zero");
+                    }
+                    else
+                    {
+                        double div = DivideTwoNumbers(numbersForDivision[0], numbersForDivision[1]);
+                        Console.WriteLine($"Result: {div}");
+                    }
                     break;
                 default:
                     Console.WriteLine("Wrong option. Choose again");
