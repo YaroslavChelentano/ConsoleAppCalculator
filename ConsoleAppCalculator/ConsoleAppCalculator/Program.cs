@@ -35,6 +35,37 @@
                         Console.WriteLine($"Result: {div}");
                     }
                     break;
+                    case 5:
+                        double numberToCheck = EnterSingleNumberFromConsole();
+                        bool isEven = CheckForEven(numberToCheck);
+                        Console.WriteLine(isEven ? "The number is even." : "The number is odd.");
+                    break;
+                    case 6:
+                        double numberForPercentage = EnterSingleNumberFromConsole();
+                        Console.WriteLine("Enter percentage to calculate:");
+                        double percent = double.Parse(Console.ReadLine());
+                        double percentageResult = CalculatePercentage(numberForPercentage, percent);
+                        Console.WriteLine($"Result: {percentageResult}");
+                    break;
+                    case 7:
+                        double numberForSqrt = EnterSingleNumberFromConsole();
+                    if (numberForSqrt < 0)
+                    {
+                        Console.WriteLine("Cannot calculate square root of a negative number.");
+                    }
+                    else
+                    {
+                        double sqrtResult = GetSquareRoot(numberForSqrt);
+                        Console.WriteLine($"Result: {sqrtResult}");
+                    }
+                    break;
+                    case 8:
+                        double baseNumber = EnterSingleNumberFromConsole();
+                        Console.WriteLine("Enter power to raise the number to:");
+                        double power = double.Parse(Console.ReadLine());
+                        double powerResult = GetPower(baseNumber, power);
+                        Console.WriteLine($"Result: {powerResult}");
+                    break;
                 default:
                     Console.WriteLine("Wrong option. Choose again");
                     break;
@@ -83,7 +114,43 @@
                 Console.WriteLine("Enter second number:");
                 double secondNumber = double.Parse(Console.ReadLine());
 
-                return new[] { firstNumber, secondNumber };
+                return [firstNumber, secondNumber];
+            }
+            static bool CheckForEven(double number)
+            {
+                if (number % 1 != 0)
+                    return false;
+
+                long integerNumber = (long)number;
+
+                if (integerNumber % 2 == 0)
+                    return true; 
+                else
+                    return false; 
+                
+            }
+
+            static double CalculatePercentage(double number, double percent)
+            {
+                return (number * percent) / 100.0;
+            }
+
+            static double GetSquareRoot(double number)
+            {
+
+                return Math.Sqrt(number);
+            }
+
+            static double GetPower(double number, double power)
+            {
+                return Math.Pow(number, power);
+            }
+
+            static double EnterSingleNumberFromConsole()
+            {
+                Console.WriteLine("Enter number:");
+                double number = double.Parse(Console.ReadLine());
+                return number;
             }
         }
     }
