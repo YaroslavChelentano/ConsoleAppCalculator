@@ -31,8 +31,8 @@
                     }
                     else
                     {
-                        double div = DivideTwoNumbers(numbersForDivision[0], numbersForDivision[1]);
-                        Console.WriteLine($"Result: {numbersForDivision[0]} / {numbersForDivision[1]} = {div}");
+                        int div = DivideTwoNumbers(numbersForDivision[0], numbersForDivision[1]);
+                        Console.WriteLine($"Result (rounded): {numbersForDivision[0]} / {numbersForDivision[1]} = {div}");
                     }
                     break;
                     case 5:
@@ -107,9 +107,9 @@
                 return firstNumber * secondNumber;
             }
 
-            static double DivideTwoNumbers(double firstNumber, double secondNumber)
+            static int DivideTwoNumbers(double firstNumber, double secondNumber)
             {
-                return firstNumber / secondNumber;
+                return (int)Math.Round(firstNumber / secondNumber);
             }
 
             static double[] EnterTwoNumbersFromConsole()
