@@ -16,7 +16,7 @@
                 case 2:
                     double[] numbersForSubract = EnterTwoNumbersFromConsole();
                     double sub = SubtractTwoNumbers(numbersForSubract[0], numbersForSubract[1]);
-                    Console.WriteLine($"Result: {sub}");
+                    Console.WriteLine($"Result: {numbersForSubract[0]} - {numbersForSubract[1]} = {sub}");
                     break;
                 case 3:
                     double[] numbersForMultiply = EnterTwoNumbersFromConsole();
