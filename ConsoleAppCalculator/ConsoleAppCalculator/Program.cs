@@ -27,12 +27,12 @@
                     double[] numbersForDivision = EnterTwoNumbersFromConsole();
                     if (numbersForDivision[1] == 0)
                     {
-                        Console.WriteLine("Second number can not be zero");
+                        Console.WriteLine("Cannot divide by zero");
                     }
                     else
                     {
                         double div = DivideTwoNumbers(numbersForDivision[0], numbersForDivision[1]);
-                        Console.WriteLine($"Result: {div}");
+                        Console.WriteLine($"Result: {numbersForDivision[0]} / {numbersForDivision[1]} = {div}");
                     }
                     break;
                     case 5:
