@@ -66,6 +66,11 @@
                         double powerResult = GetPower(baseNumber, power);
                         Console.WriteLine($"Result: {powerResult}");
                     break;
+                    case 9:
+                        double[] creditTotalAndMonths = EnterTwoNumbersFromConsole();
+                        double averageCount = CalculateCreditAverage(creditTotalAndMonths[0], creditTotalAndMonths[1]);
+                        Console.WriteLine($"Average credit transaction per month: {averageCount:F2}");
+                    break;
                 default:
                     Console.WriteLine("Wrong option. Choose again");
                     break;
@@ -82,7 +87,8 @@
                     "5. Check number for even\n" +
                     "6. Calculate percentage from number\n" +
                     "7. Get square root from number\n" +
-                    "8. Get power of number"
+                    "8. Get power of number\n" +
+                    "9. Get credit average amount for month (first enter credit total) (second enter months)"
                 );
             }
 
@@ -151,6 +157,12 @@
                 Console.WriteLine("Enter number:");
                 double number = double.Parse(Console.ReadLine());
                 return number;
+            }
+
+
+            static double CalculateCreditAverage(double creditTotal, double months)
+            {
+                return creditTotal / months;
             }
         }
     }
