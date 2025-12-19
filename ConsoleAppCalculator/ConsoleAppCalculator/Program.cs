@@ -21,7 +21,7 @@
                 case 3:
                     double[] numbersForMultiply = EnterTwoNumbersFromConsole();
                     double mul = MultiplyTwoNumbers(numbersForMultiply[0], numbersForMultiply[1]);
-                    Console.WriteLine($"Result: {mul}");
+                    Console.WriteLine($"Result: {numbersForMultiply[0]} * {numbersForMultiply[1]} = {mul}");
                     break;
                 case 4:
                     double[] numbersForDivision = EnterTwoNumbersFromConsole();
